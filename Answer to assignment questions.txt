@@ -1,0 +1,17 @@
+These are my answers to the questions presented in assignment.md
+
+1. How would the code perform if the size of the dictionary were 1 million words?
+	The code would obviously finish a lot slower. 
+	Considering that every query is checked against every word in the dictionary, it would result in a dramatic increase in the number of recursive descents, which occupy the most time.  
+	Even if the majority of words immediately do not recursviely descend, the increase in the words that would have a descent would make the total run time much worse.
+	
+2. How would the code perform with an edit distance of 3?
+	This could make the code perform much worse for each word in the dictionary. 
+	Because three sets of modifications are allowed, there would be a lot more subsequent recursive calls. 
+	Furthermore, since many of the initial checks which limit the amount of recursion are depended on the number of available modifications, there would be much more available branching for the calls.
+
+3. How does the code perform on long queries versus short queries and why?
+	The code performs reasonably well on really short and really long queries. This is becuase it immediately checks the difference in length between the word and the query.
+	If the difference is too high, than logically, it will be impossible to accomadate for that difference.
+	Thus it can safely say that there is no way to create a match given the number of modifications left.
+	
